@@ -31,91 +31,101 @@ This will help you to understand how the Apple Music API works and how to deal w
 
 Make sure you have installed below in your PC or have added into the PATH.
 
-- MP4Box
-- mp4decrypt (bento4)
-- ccextractor
+- MP4Box ([VideoHelp Link](https://www.videohelp.com/software/MP4Box))
+- mp4decrypt (bento4) - Added in the Forked Branch
+- ccextractor - Added in the Forked Branch
 
 ## Usage
-
-First of all you have to clone this project to your pc. If you're using git, you can do it simply by following command.
-
-```
-git clone https://github.com/dropcreations/Manzana-Apple-Music-Downloader.git
-```
-
-or you're not using git, just download the source code as a `.zip` file and extract it. Then go to the project directory.
-
-This is a python program. So, you have to install `python` first (Recommended python version is `3.9`). Then you have to install all dependancies that need to run this program. You can approach this using below command.
-
-```
-pip install -r requirements.txt
-```
-
-__NOTE:__ Use `python3` or `pip3` if `python` or `pip` doesn't work for you.
-
-Now you can run the program. In first run it will create all directories that need to deal inside the program. You have to fill the things that it will ask for. Firstly, it will ask to put your Widevine device files into `device` directory.
-
-So, copy your widevine device directory to it. it should contain `device_client_id_blob` and  `device_private_key` files. Example for the file structure inside the `device` directory given below.
-
-```
-.
-.
-|--config
-|--device
-|  |--{device_name}
-|      |--device_client_id_blob
-|      |--device_private_key
-|--keys
-.
-.
-```
-
-Then it will also ask for your `mediaUserToken`. Get it from cookies and add it to the program. You can get help page using below command.
-
-```
-python manzana.py -h
-```
-
-it will show you the help page.
-
-```
-usage: manzana [-h] [-v] [-a] [-s] [-ln] [-tn] [-cn] url [url ...]
-
-Manzana: Apple Music Downloader
-
-positional arguments:
-  url               Apple Music URL(s) for artist, album, song, playlist or music-video
-
-optional arguments:
-  -h, --help        show this help message and exit
-  -v, --version     show program's version number and exit
-  -a, --anim-cover  save animated artwork. [default: False]
-  -s, --skip-video  skip music-videos inside albums. [default: False]
-  -ln, --no-lrc     don't save time-synced lyrics. [default: False]
-  -tn, --no-tags    don't add credits info. [default: False]
-  -cn, --no-cover   don't save album artwork. [default: False]
-```
-
-Now you can start.
-
-```
-python manzana.py {url(s)},...
-```
-
-You can input multiple urls at one time. Just add `url_01 url_02 url_03...` with a `space` separator. You also can add text files that have urls. Just like `url_01 txt_file_path_01 url_02...`. If you're going to use a text file, urls must be in line by line as below.
-
-```
-https://music.apple.com/url_01
-https://music.apple.com/url_02
-https://music.apple.com/url_03
-https://music.apple.com/url_04
-.
-.
-```
-
-__NOTE:__ When you're downloading an artist, if you want all items, just type `all` keyword when it ask for an ID.
-
-__THIS IS FOR PRIVATE USE ONLY. TAKE YOUR OWN RISK AND USE IT!__
+- Zip
+  Just download the source code as a `.zip` file and extract it.
+  Run the Following command in the directory:
+  ```
+  pip install -r requirements.txt
+  ```
+  Then Run this command
+  ```
+  python manzana.py -h
+  ```
+- Git
+  First of all you have to clone this project to your pc. If you're using git, you can do it simply by following command.
+  
+  ```
+  git clone https://github.com/dropcreations/Manzana-Apple-Music-Downloader.git
+  ```
+  
+   Then go to the project directory.
+  
+  This is a python program. So, you have to install `python` first (Recommended python version is `3.9`). Then you have to install all dependancies that need to run this program. You can approach this using below command.
+  
+  ```
+  pip install -r requirements.txt
+  ```
+  
+  __NOTE:__ Use `python3` or `pip3` if `python` or `pip` doesn't work for you.
+  
+  Now you can run the program. In first run it will create all directories that need to deal inside the program. You have to fill the things that it will ask for. Firstly, it will ask to put your Widevine device files into `device`     directory.
+  
+  So, copy your widevine device directory to it. it should contain `device_client_id_blob` and  `device_private_key` files. Example for the file structure inside the `device` directory given below.
+  
+  ```
+  .
+  .
+  |--config
+  |--device
+  |  |--{device_name}
+  |      |--device_client_id_blob
+  |      |--device_private_key
+  |--keys
+  .
+  .
+  ```
+  
+  Then it will also ask for your `mediaUserToken`. Get it from cookies and add it to the program. You can get help page using below command.
+  
+  ```
+  python manzana.py -h
+  ```
+  
+  it will show you the help page.
+  
+  ```
+  usage: manzana [-h] [-v] [-a] [-s] [-ln] [-tn] [-cn] url [url ...]
+  
+  Manzana: Apple Music Downloader
+  
+  positional arguments:
+    url               Apple Music URL(s) for artist, album, song, playlist or music-video
+  
+  optional arguments:
+    -h, --help        show this help message and exit
+    -v, --version     show program's version number and exit
+    -a, --anim-cover  save animated artwork. [default: False]
+    -s, --skip-video  skip music-videos inside albums. [default: False]
+    -ln, --no-lrc     don't save time-synced lyrics. [default: False]
+    -tn, --no-tags    don't add credits info. [default: False]
+    -cn, --no-cover   don't save album artwork. [default: False]
+  ```
+  
+  Now you can start.
+  
+  ```
+  python manzana.py {url(s)},...
+  ```
+  
+  You can input multiple urls at one time. Just add `url_01 url_02 url_03...` with a `space` separator. You also can add text files that have urls. Just like `url_01 txt_file_path_01 url_02...`. If you're going to use a text file, urls must be in line by line as below.
+  
+  ```
+  https://music.apple.com/url_01
+  https://music.apple.com/url_02
+  https://music.apple.com/url_03
+  https://music.apple.com/url_04
+  .
+  .
+  ```
+  
+  __NOTE:__ When you're downloading an artist, if you want all items, just type `all` keyword when it ask for an ID.
+  
+  __THIS IS FOR PRIVATE USE ONLY. TAKE YOUR OWN RISK AND USE IT!__
 
 ### Demo
 
