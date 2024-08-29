@@ -36,7 +36,7 @@ Make sure you have installed below in your PC or have added into the PATH.
 - ccextractor - Added in the Forked Branch
 
 ## Usage
-- ###Zip
+- ### Zip
   
   Just download the source code as a `.zip` file and extract it.
   Run the Following command in the directory:
@@ -47,7 +47,7 @@ Make sure you have installed below in your PC or have added into the PATH.
   ```
   python manzana.py -h
   ```
-- ###Git
+- ### Git
   
   First of all you have to clone this project to your pc. If you're using git, you can do it simply by following command.
   
